@@ -185,7 +185,7 @@ for genre in genresIos:
             lenGenre += 1
     avgRatings = total / lenGenre
     print(genre, avgRatings)
-N = 150
+N = 20
 data = genresIos
 names = list(data.keys())
 values = list(data.values())
@@ -194,11 +194,12 @@ plt.gca().margins(x=0)
 plt.gcf().canvas.draw()
 tl = plt.gca().get_xticklabels()
 maxsize = max([t.get_window_extent().width for t in tl])
-m = 0.2
+m = .8
 s = maxsize/plt.gcf().dpi*N+2*m
 margin = m/plt.gcf().get_size_inches()[0]
 plt.gcf().subplots_adjust(left=margin, right=1.-margin)
 plt.gcf().set_size_inches(s, plt.gcf().get_size_inches()[1])
 plt.savefig('bar.png')
+
 plt.show()
 #barplot(genresIos)
